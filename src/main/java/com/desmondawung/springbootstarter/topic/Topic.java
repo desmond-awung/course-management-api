@@ -1,7 +1,15 @@
 package com.desmondawung.springbootstarter.topic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+// @ Entity tells JPA to create a table called "Topic" in the DB with the number of columns eqiual to this class' fields.
+// each instance of this class will be inserted as a row in the table
+@Entity
 public class Topic {
-	
+
+	// @Id means this class member (String id) will be marked as the primary key in the table
+	@Id
 	private String id;
 	private String name;
 	private String description;
