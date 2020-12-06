@@ -17,7 +17,7 @@ public interface CourseRepository extends CrudRepository<Course, String>{
     // public List<Course> findByDescription(String description); // find all courses based on the name
 
     // in case we want to find a field in an object, specify the field name in the Course class + the field name in the Topic Class (findByTopic won't work: we need a primitive)
-    public List<Course> findByTopicId(String topicId);
+    public List<Course> findByParentTopicId(String topicId);
 
 
     

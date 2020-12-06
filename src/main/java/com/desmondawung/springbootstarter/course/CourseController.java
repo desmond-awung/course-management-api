@@ -39,15 +39,17 @@ public class CourseController {
 	// POST request to add a course to the list of courses for a topic
 	@PostMapping("/topics/{topicId}/courses")
 	public void addCourse(@RequestBody Course course, @PathVariable String topicId) {
-		// for every course added, we include the id of its topic (no need for a full fledged course instance)
-		course.setTopic(new Topic(topicId, "", ""));	// semi-mapping a course to a topic
+		// for every course added, we include the id of its topic
+		course.setParentTopicId(topicId);
+		course.setTopic(new Topic(topicId, "", ""));	// helps with mapping a course to a topic
 		courseService.addCourse(course);
 	}
 
 	// PUT request to update a course
 	@PutMapping("/topics/{topicId}/courses/{id}")
 	public void updateCourse(@RequestBody Course course, @PathVariable String topicId, @PathVariable String id) {
-		course.setTopic(new Topic(topicId, "", ""));	// semi-mapping a course to a topic
+		course.setParentTopicId(topicId);
+		course.setTopic(new Topic(topicId, "", ""));	// helps with mapping a course to a topic
 		courseService.updateCourse(course);
 	}
 

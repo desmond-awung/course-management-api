@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service   
 public class CourseService {
 
-    // when Spring creates an intance of the CourseService, it will inject an instance of the CourseRepository
+    // when Spring creates an instance of the CourseService, it will inject an instance of the CourseRepository
     @Autowired
     private CourseRepository courseRepository;
 
@@ -20,7 +20,7 @@ public class CourseService {
         List<Course> courses = new ArrayList<>();
         // findAll returns an iterable. To convert this to a List we use a method reference:
         // loop thru iterable, and for each elt, add to the end of the list 
-        courses = courseRepository.findByTopicId(topicId);
+        courses = courseRepository.findByParentTopicId(topicId);
         
         return courses;    // return a list of all values in the hash table
     }

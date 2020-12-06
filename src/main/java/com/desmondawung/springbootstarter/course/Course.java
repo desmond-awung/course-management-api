@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.desmondawung.springbootstarter.topic.Topic;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // @ Entity tells JPA to create a table called "Course" in the DB with the number of columns eqiual to this class' fields.
 // each instance of this class will be inserted as a row in the table
@@ -16,9 +17,11 @@ public class Course {
 	private String id;
 	private String name;
 	private String description;
+	private String parentTopicId;
 
 	// mapping courses to a topic: many-to-one relationship
 	@ManyToOne
+	@JsonIgnore
 	private Topic topic;
 	
 	// no arg constructor, so the objects are easier to initialize
@@ -32,6 +35,7 @@ public class Course {
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.parentTopicId = topicId;
 		this.topic = new Topic(topicId, "", "");	// TODO creating a new instance of a topic for every course???
 	}
 	
@@ -54,13 +58,19 @@ public class Course {
 		this.description = description;
 	}
 
-	public Topic getTopic() {
-		return topic;
-	}
+    public String getParentTopicId() {
+        return parentTopicId;
+    }
 
-	public void setTopic(Topic topic) {
-		this.topic = topic;
-	}
+    public void setParentTopicId(String parentTopicId) {
+        this.parentTopicId = parentTopicId;
+    }
 
-	
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
 }
