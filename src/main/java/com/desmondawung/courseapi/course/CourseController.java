@@ -1,8 +1,8 @@
-package com.desmondawung.springbootstarter.course;
+package com.desmondawung.courseapi.course;
 
 import java.util.List;
 
-import com.desmondawung.springbootstarter.topic.Topic;
+import com.desmondawung.courseapi.topic.Topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -32,7 +30,7 @@ public class CourseController {
 
 	// GET request for a specific course
 	@GetMapping("/topics/{topicId}/courses/{id}")
-	public Course getCourse(@PathVariable String id) {	// maps the id in the route to the id param in this method. 
+	public Course getCourse(@PathVariable String id) {	// maps the id in the route to the id param in this method.
 		return courseService.getCourse(id);
 	}
 

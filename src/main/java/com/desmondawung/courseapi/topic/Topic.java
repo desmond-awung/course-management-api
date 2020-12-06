@@ -1,4 +1,4 @@
-package com.desmondawung.springbootstarter.topic;
+package com.desmondawung.courseapi.topic;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

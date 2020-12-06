@@ -1,4 +1,4 @@
-package com.desmondawung.springbootstarter.course;
+package com.desmondawung.courseapi.course;
 
 import java.util.List;
 

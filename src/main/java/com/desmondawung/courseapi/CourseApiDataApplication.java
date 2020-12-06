@@ -1,4 +1,4 @@
-package com.desmondawung.springbootstarter;
+package com.desmondawung.courseapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

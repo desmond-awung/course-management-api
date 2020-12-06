@@ -1,10 +1,10 @@
-package com.desmondawung.springbootstarter.course;
+package com.desmondawung.courseapi.course;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.desmondawung.springbootstarter.topic.Topic;
+import com.desmondawung.courseapi.topic.Topic;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // @ Entity tells JPA to create a table called "Course" in the DB with the number of columns eqiual to this class' fields.
