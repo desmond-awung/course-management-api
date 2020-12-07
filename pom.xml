@@ -8,7 +8,7 @@
 		<version>2.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.desmondawung.springbootstarter</groupId>
+	<groupId>com.desmondawung.courseapi</groupId>
 	<artifactId>course-api-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>course-api-data</name>
@@ -29,8 +29,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derby</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>

@@ -1,15 +1,9 @@
 package com.desmondawung.courseapi.topic;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TopicController {
@@ -29,7 +23,7 @@ public class TopicController {
 	// GET request for a specific topic
 	// @RequestMapping("/topics/{id}")
 	@GetMapping("/topics/{id}")
-	public Topic getTopic(@PathVariable String id) {	// maps the id in the route to the id param in this method. 
+	public Topic getTopic(@PathVariable String id) {	// maps the id in the route to the id param in this method.
 	// @RequestMapping("/topics/{foo}") // ==> not recommended 
 	// public Topic getTopic(@PathVariable("foo") String id) {	// if both don't match
 		return topicService.getTopic(id);
